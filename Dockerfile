@@ -8,4 +8,5 @@ RUN mvn -X clean package -Dmaven.test.skip=true
 FROM chenmins/serverjre8:util
 COPY --from=app /usr/src/mymaven/target/springboot-hello-0.0.1-SNAPSHOT.jar /opt
 WORKDIR /opt
+EXPOSE 8080
 CMD ["java","-jar","/opt/springboot-hello-0.0.1-SNAPSHOT.jar"]
